@@ -1,0 +1,18 @@
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+h3 {
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Gochi Hand', cursive;
+}
+
+.btncolor {
+	background: linear-gradient(to right, #ee6e73, #ee6eb4);
+}
+
+.btncolor:hover {
+	background: linear-gradient(to right, #F1C40F, #F1C40F);
+}

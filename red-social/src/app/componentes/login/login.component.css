@@ -1,0 +1,42 @@
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+h3 {
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Gochi Hand', cursive;
+}
+
+
+
+.btn-facebook,.btn-google {
+    width:150px;
+}
+
+.btn-facebook {
+    background: #0717a8;
+    color:#fff;
+}
+
+.btn-facebook:hover{
+    background-color:#F1C40F;
+}
+
+.btn-google {
+    background: rgb(199, 0, 0);
+    color:#fff;
+}
+
+.btn-google:hover{
+    background-color:#F1C40F;
+}
+
+.btncolor {
+	background: linear-gradient(to right, #ee6e73, #ee6eb4);
+}
+
+.btncolor:hover {
+	background: linear-gradient(to right, #F1C40F, #F1C40F);
+}
