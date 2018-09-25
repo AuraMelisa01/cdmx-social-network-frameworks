@@ -14,6 +14,7 @@ import { RegistrerComponent } from './componentes/registrer/registrer.component'
 import { HomeComponent } from './componentes/home/home.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PrivatePageComponent } from './componentes/private-page/private-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     RegistrerComponent,
     HomeComponent,
     NavbarComponent,
+    PrivatePageComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
