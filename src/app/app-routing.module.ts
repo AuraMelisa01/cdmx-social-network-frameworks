@@ -6,6 +6,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { RegistrerComponent } from './componentes/registrer/registrer.component';
 
 const routes: Routes = [
+  // {path:'', component: HomeComponent},
   {path:'home', component: HomeComponent},
   {path:'login', component: LoginComponent},
   {path:'registrer', component: RegistrerComponent}
@@ -14,6 +15,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
-  
+
 })
 export class AppRoutingModule { }
