@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import 'rxjs/add/operator/map';
- 
-
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +31,7 @@ export class AuthService {
     return this.afAuth.authState.map(auth => auth);
   }
 
-  doFacebookLogin(){ 
+  doFacebookLogin(){
     return new Promise<any>((resolve, reject) => {
       const provider = new firebase.auth.FacebookAuthProvider();
       this.afAuth.auth
