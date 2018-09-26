@@ -29,11 +29,11 @@ export class AuthService {
     });
   }
 
-  getAuth(){
+  getAuth(){ /*Funcion que devuelve los datos del usuario logeado*/
     return this.afAuth.authState.map(auth => auth);
   }
 
-  doFacebookLogin(){
+  doFacebookLogin(){ 
     return new Promise<any>((resolve, reject) => {
       const provider = new firebase.auth.FacebookAuthProvider();
       this.afAuth.auth

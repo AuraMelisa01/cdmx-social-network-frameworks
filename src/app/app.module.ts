@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule} from 'angularfire2/firestore';
@@ -21,7 +22,7 @@ import { PrivatePageComponent } from './componentes/private-page/private-page.co
     AppComponent,
     LoginComponent,
     RegistrerComponent,
-    HomeComponent,
+    HomeComponent, 
     NavbarComponent,
     PrivatePageComponent,
   ],
@@ -30,7 +31,8 @@ import { PrivatePageComponent } from './componentes/private-page/private-page.co
     AngularFirestoreModule,
     AngularFireAuthModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
