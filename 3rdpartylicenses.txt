@@ -264,6 +264,10 @@ END OF TERMS AND CONDITIONS
 MIT
 MIT
 
+angularfire2@5.0.2
+MIT
+MIT
+
 firebase@5.5.1
 Apache-2.0
 Apache-2.0
@@ -291,10 +295,6 @@ Apache-2.0
 @firebase/webchannel-wrapper@0.2.9
 Apache-2.0
 Apache-2.0
-
-angularfire2@5.0.2
-MIT
-MIT
 
 @angular/fire@5.0.2
 MIT
