@@ -260,11 +260,11 @@ If the Work includes a "NOTICE" text file as part of its distribution, then any 
 
 END OF TERMS AND CONDITIONS
 
-@angular/common@6.1.8
+angularfire2@5.0.2
 MIT
 MIT
 
-angularfire2@5.0.2
+@angular/common@6.1.8
 MIT
 MIT
 
