@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../servicios/auth.service';
-import { log } from 'util';
+// import * as firebase from 'firebase/app';
+// import { log } from 'util';
 // import { FlashMessagesService } from 'angular2-flash-messages';
 
 
@@ -32,5 +33,18 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  onClickGoogle(){
+    this.authService.loginGoogle()
+    .then((res) => {
+      this.router.navigate(['/privatepage']);
+    }).catch( err => console.log(err.message))
+  }
+
+  onClickFacebook(){
+    this.authService.loginFacebook()
+    .then((res) => {
+      this.router.navigate(['/privatepage']);
+    }).catch( err => console.log(err.message))
+  }
 
 }

@@ -31,29 +31,17 @@ export class AuthService {
     return this.afAuth.authState.map(auth => auth);
   }
 
-  doFacebookLogin() {
-    return new Promise<any>((resolve, reject) => {
-      const provider = new firebase.auth.FacebookAuthProvider();
-      this.afAuth.auth
-      .signInWithPopup(provider)
-      .then(res => {
-        resolve(res);
-      }, err => {
-        console.log(err);
-        reject(err);
-      });
-    });
-  }
-
-
-  googleLogin() {
-    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-
-  }
-
 
   logouth() {
     return this.afAuth.auth.signOut();
+  }
+
+  loginGoogle(){ /*Invocacion para poder utilizar metodo de google en la opncion de login*/
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider);
+  }
+
+  loginFacebook(){
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider);
   }
 }
 

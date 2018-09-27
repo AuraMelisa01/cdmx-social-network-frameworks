@@ -2,3 +2,8 @@
   width: 220px;
   height: 220px;
 }
+
+img.rounded-circle {
+  width: 45px;
+  height: 45px;
+}
