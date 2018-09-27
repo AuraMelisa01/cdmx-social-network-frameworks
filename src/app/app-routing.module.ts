@@ -6,11 +6,13 @@ import { LoginComponent } from './componentes/login/login.component';
 import { RegistrerComponent } from './componentes/registrer/registrer.component';
 import { PrivatePageComponent } from './componentes/private-page/private-page.component';
 
+import { AuthGuard } from './security-guard/auth.guard';
+
 const routes: Routes = [
-  {path:'', component: HomeComponent},
-  {path:'login', component: LoginComponent},
-  {path:'registrer', component: RegistrerComponent},
-  {path:'privatepage', component: PrivatePageComponent}
+  {path: '', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'registrer', component: RegistrerComponent},
+  {path: 'privatepage', component: PrivatePageComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

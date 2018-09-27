@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { AuthService } from '../../servicios/auth.service';
+import { FlashMessageService } from 'angular2-flash-message';
 
 @Component({
   selector: 'app-registrer',
@@ -11,21 +12,26 @@ export class RegistrerComponent implements OnInit {
   public email: string;
   public password: string;
 
-  constructor( 
+  constructor(
     public authService: AuthService,
-    public router: Router ) { }
+    public router: Router,
+    public flashMensaje: FlashMessageService ) { }
 
   ngOnInit() {
   }
 
-  onSubmitAddUser(){
+  onSubmitAddUser() {
     this.authService.registrerUser(this.email, this.password)
     .then((res) => {
-      this.router.navigate(['/privatepage'])
-      console.log("okkk");
-      console.log(res);
+      this.flashMensaje.show('Usuario creado correctamente',
+      {cssClass: 'alert-success', timeout: 4000});
+      this.router.navigate(['/privatepage']);
+      // console.log('ok');
+      // console.log(res);
     }).catch ((err) => {
-      console.log(err);
+      this.flashMensaje.show(err.message,
+      {cssClass: 'alert-danger', timeout: 4000});
+      // console.log(err);
     });
   }
 }
