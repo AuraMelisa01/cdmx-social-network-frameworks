@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
-import { FlashMessageModule } from 'angular2-flash-message';
-import { FlashMessageService } from 'angular2-flash-message';
+// import { FlashMessageModule } from 'angular2-flash-message';
+// import { FlashMessageService } from 'angular2-flash-message';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -40,9 +40,9 @@ import { PrivatePageComponent } from './componentes/private-page/private-page.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FlashMessageModule
+    // FlashMessageModule
   ],
-  providers: [AuthService, AuthGuard, FlashMessageService],
+  providers: [AuthService, AuthGuard, /*FlashMessageService*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
