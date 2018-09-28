@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../servicios/auth.service';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Title} from '@angular/platform-browser';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 // import * as firebase from 'firebase/app';
 // import { log } from 'util';
 // import { FlashMessagesService } from 'angular2-flash-messages';
@@ -14,15 +15,33 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  loginForm: FormGroup;
   public email: string;
   public password: string;
 
   constructor(
+    private fb: FormBuilder,
+    title: Title,
     public authService: AuthService,
     public router: Router,
-  ) {}
+  ) {
+    title.setTitle('Login Angular 6');
+    this.buildForm();
+  }
+
+  buildForm() {
+    this.loginForm = this.fb.group({
+      email: ['', Validators.compose([Validators.required, Validators.email]) ],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)]) ],
+    });
+  }
 
   ngOnInit() {
+  }
+
+  submit() {
+    const email = this.loginForm.get('email').value;
+    const password = this.loginForm.get('password').value;
   }
 
    onSubmitLogin() {

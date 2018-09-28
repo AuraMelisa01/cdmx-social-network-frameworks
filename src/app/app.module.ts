@@ -22,6 +22,8 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PrivatePageComponent } from './componentes/private-page/private-page.component';
 
+import {ReactiveFormsModule} from '@angular/forms';
+
 
 
 @NgModule({
@@ -40,6 +42,7 @@ import { PrivatePageComponent } from './componentes/private-page/private-page.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule
     // FlashMessageModule
   ],
   providers: [AuthService, AuthGuard, /*FlashMessageService*/],

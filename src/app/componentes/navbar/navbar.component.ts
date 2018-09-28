@@ -21,13 +21,23 @@ export class NavbarComponent implements OnInit {
       if (auth) {
         this.isLogin = true;
         this.nameUser = auth.displayName;
-        this.emailUser = auth.email;
-        this.photoUser = auth.photoURL;
-        console.log(this.photoUser);
-      } else {
-        this.isLogin = false;
-      }
-    });
+        if(!auth.displayName){
+          this.nameUser = 'Usuario';
+          this.emailUser = auth.email;
+        } else {
+          this.nameUser = auth.displayName;
+        }
+
+        if (!auth.photoURL){
+          this.photoUser = './assets/user.png';
+        } else  {
+          this.photoUser = auth.photoURL;
+        }
+       } else {
+          this.isLogin = false;
+        }
+
+    })
   }
 
   onClickLogout() {

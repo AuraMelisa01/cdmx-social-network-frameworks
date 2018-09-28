@@ -1,23 +1,42 @@
 <div class="container">
   <div class="col-md-6 mx-auto mt-5">
     <div>
-      <img src="https://github.com/AuraMelisa01/cdmx-social-network-frameworks/blob/gh-pages/assets/beemom.png?raw=true"
-        class="rounded mx-auto d-block logo responsive" alt="Beemom">
+      <img src="https://github.com/AuraMelisa01/cdmx-social-network-frameworks/blob/gh-pages/assets/beemom.png?raw=true" class="rounded mx-auto d-block logo responsive"
+        alt="Beemom">
       <h3 class="mx-auto">INICIAR SESIÓN</h3>
     </div>
     <div class="card">
       <div class="card-body">
-        <form (submit)="onSubmitLogin()">
+        <form (submit)="onSubmitLogin()" [formGroup]="loginForm" novalidate>
+
           <div class="form-group">
-            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" aria-describedby="emailHelp"
+            <input formControlName="email" type="email" class="form-control" id="email" name="email" [(ngModel)]="email" aria-describedby="emailHelp"
               placeholder="Correo" required>
+            <div *ngIf="loginForm.get('email').errors" class="alert alert-danger">
+              <div *ngIf="loginForm.get('email').errors['required']">
+                Correo requerido
+              </div>
+              <div *ngIf="loginForm.get('email').errors['email']">
+                Correo inválido
+              </div>
+            </div>
           </div>
+
           <div class="form-group">
-            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
+            <input formControlName="password" type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
               placeholder="Contraseña" required>
+            <div *ngIf="loginForm.get('password').errors" class="alert alert-danger sizeDiv">
+              <div *ngIf="loginForm.get('password').errors['required']">
+              Contraseña requerida
+              </div>
+              <div *ngIf="loginForm.get('password').errors['minlength']">
+              Contraseña mayor de 6 caracteres
+              </div>
+            </div>
           </div>
+
           <div class="form-group">
-            <input type="submit" value="Iniciar Sesión" class="btn btncolor btn-danger btn-block ">
+            <input type="submit" value="Iniciar Sesión" class="btn btncolor btn-danger btn-block" [disabled]="!loginForm.valid">
           </div>
           <div class="card-body d-flex justify-content-around">
             <button class="btn btn-facebook" (click)="onClickFacebook()">

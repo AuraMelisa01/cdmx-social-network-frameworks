@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { AuthService } from '../../servicios/auth.service';
+import {Title} from '@angular/platform-browser';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 // import { FlashMessageService } from 'angular2-flash-message';
 
 @Component({
@@ -9,17 +11,34 @@ import { AuthService } from '../../servicios/auth.service';
   styleUrls: ['./registrer.component.css']
 })
 export class RegistrerComponent implements OnInit {
+  loginForm: FormGroup;
   public email: string;
   public password: string;
 
   constructor(
+    private fb: FormBuilder,
+    title: Title,
     public authService: AuthService,
     public router: Router,
     // public flashMensaje: FlashMessageService
-   ) { }
+   ) {
+    title.setTitle('Login Angular 6');
+    this.buildForm();
+   }
 
+   buildForm() {
+    this.loginForm = this.fb.group({
+      email: ['', Validators.compose([Validators.required, Validators.email]) ],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)]) ],
+    });
+  }
 
   ngOnInit() {
+  }
+
+  submit() {
+    const email = this.loginForm.get('email').value;
+    const password = this.loginForm.get('password').value;
   }
 
   onSubmitAddUser() {

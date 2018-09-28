@@ -18,3 +18,16 @@ h3 {
 .btncolor:hover {
 	background: linear-gradient(to right, #F1C40F, #F1C40F);
 }
+
+.alert {
+  border: none;
+  color: #e74c3c;
+}
+
+.alert-danger {
+  background-color: #dee2e603;
+}
+
+.sizeDiv {
+  margin-left: 5px;
+}
