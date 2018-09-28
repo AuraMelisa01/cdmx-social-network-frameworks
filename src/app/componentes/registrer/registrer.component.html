@@ -33,7 +33,7 @@
                   </div>
                 </div>
               </div>
-          <input type="submit" value="Registrar" class="btn btncolor btn-danger btn-block">
+          <input type="submit" value="Registrar" class="btn btncolor btn-danger btn-block" [disabled]="!loginForm.valid">
         </form>
       </div>
     </div>
