@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
         this.nameUser = auth.displayName;
         this.emailUser = auth.email;
         this.photoUser = auth.photoURL;
+        console.log(this.photoUser);
       } else {
         this.isLogin = false;
       }

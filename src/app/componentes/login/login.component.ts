@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../servicios/auth.service';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 // import * as firebase from 'firebase/app';
 // import { log } from 'util';
 // import { FlashMessagesService } from 'angular2-flash-messages';
@@ -12,18 +13,19 @@ import { AuthService } from '../../servicios/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   public email: string;
   public password: string;
 
   constructor(
     public authService: AuthService,
-    public router: Router
-  ) { }
+    public router: Router,
+  ) {}
 
   ngOnInit() {
   }
 
-  onSubmitLogin() {
+   onSubmitLogin() {
     this.authService.loginEmail(this.email, this.password)
     .then( (res) => {
       this.router.navigate(['/privatepage']);
@@ -33,18 +35,21 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onClickGoogle(){
+  onClickGoogle() {
     this.authService.loginGoogle()
     .then((res) => {
       this.router.navigate(['/privatepage']);
-    }).catch( err => console.log(err.message))
+    }).catch( err => console.log(err.message));
   }
 
-  onClickFacebook(){
+  onClickFacebook() {
     this.authService.loginFacebook()
     .then((res) => {
       this.router.navigate(['/privatepage']);
-    }).catch( err => console.log(err.message))
+    }).catch( err => console.log(err.message));
   }
 
 }
+
+
+
