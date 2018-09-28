@@ -6,7 +6,7 @@
     </div>
     <div class="card">
       <div class="card-body">
-          <form (submit)="onSubmitLogin()" [formGroup]="loginForm" novalidate>
+          <form (submit)="onSubmitAddUser()" [formGroup]="loginForm" novalidate>
 
               <div class="form-group">
                 <input formControlName="email" type="email" class="form-control" id="email" name="email" [(ngModel)]="email" aria-describedby="emailHelp"
