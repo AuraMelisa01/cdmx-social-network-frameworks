@@ -1,5 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="" routerLink="/">* Beemom *</a>
+  <a class="navbar-brand" href="" routerLink="/" *ngIf="!isLogin">* Beemom *</a>
+  <img src="./assets/beemomlogo.png" class="rounded mx-auto d-block logo responsive" alt="Beemom" *ngIf="isLogin">
+  <button type="button" class="btn btn-success navbar-brand nav-link mr-auto" href="#" routerLink="./muro" *ngIf="isLogin">*Muro*</button>
+  <button type="button" class="btn btn-success navbar-brand nav-link mr-auto" href="#" routerLink="./perfil" *ngIf="isLogin">*Perfil*</button>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -14,14 +17,14 @@
         <a class="nav-link" href="#" routerLink="./registrer">Registrar</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">{{nameUser}}</a>
+        <a class="nav-link" *ngIf="isLogin">{{nameUser}}</a>
       </li>
-      <li class="nav-item" *ngIf="isLogin">
+      <li class="nav-item mr-auto" *ngIf="isLogin">
         <img src="{{photoUser}}" class="rounded-circle">
-        <span class="badge pill badge-secondary">{{emailUser}}</span>
+        <!-- <span class="badge pill badge-secondary">{{emailUser}}</span> -->
       </li>
       <li class="nav-item" *ngIf="isLogin">
-          <a class="nav-link" href="#" (click)="onClickLogout()">Cerrar Sesión</a>
+          <button type="button" class="btn btn-success nav-link" href="#" (click)="onClickLogout()">Cerrar Sesión</button>
       </li>
     </ul>
   </div>

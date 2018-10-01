@@ -4,15 +4,16 @@ import { Routes, RouterModule} from '@angular/router';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrerComponent } from './componentes/registrer/registrer.component';
-import { PrivatePageComponent } from './componentes/private-page/private-page.component';
+import { MuroComponent } from './componentes/muro/muro.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 
-import { AuthGuard } from './security-guard/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registrer', component: RegistrerComponent},
-  {path: 'privatepage', component: PrivatePageComponent, canActivate: [AuthGuard]}
+  {path: 'muro', component: MuroComponent},
+  {path: 'perfil', component: PerfilComponent},
 ];
 
 @NgModule({

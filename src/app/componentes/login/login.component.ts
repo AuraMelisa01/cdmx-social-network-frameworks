@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     public authService: AuthService,
     public router: Router,
   ) {
-    title.setTitle('Login Angular 6');
+    title.setTitle('BEEMOM');
     this.buildForm();
   }
 
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
    onSubmitLogin() {
     this.authService.loginEmail(this.email, this.password)
     .then( (res) => {
-      this.router.navigate(['/privatepage']);
+      this.router.navigate(['/muro']);
     }).catch( (err) => {
       console.log(err);
       this.router.navigate(['/login']);
@@ -57,14 +57,14 @@ export class LoginComponent implements OnInit {
   onClickGoogle() {
     this.authService.loginGoogle()
     .then((res) => {
-      this.router.navigate(['/privatepage']);
+      this.router.navigate(['/muro']);
     }).catch( err => console.log(err.message));
   }
 
   onClickFacebook() {
     this.authService.loginFacebook()
     .then((res) => {
-      this.router.navigate(['/privatepage']);
+      this.router.navigate(['/muro']);
     }).catch( err => console.log(err.message));
   }
 

@@ -22,7 +22,7 @@ export class RegistrerComponent implements OnInit {
     public router: Router,
     // public flashMensaje: FlashMessageService
    ) {
-    title.setTitle('Login Angular 6');
+    title.setTitle('BEEMOM');
     this.buildForm();
    }
 
@@ -46,7 +46,7 @@ export class RegistrerComponent implements OnInit {
     .then((res) => {
       // this.flashMensaje.show('Usuario creado correctamente',
       // {cssClass: 'alert-success', timeout: 4000});
-      this.router.navigate(['/privatepage']);
+      this.router.navigate(['/muro']);
       console.log('ok');
       console.log(res);
     }).catch ((err) => {

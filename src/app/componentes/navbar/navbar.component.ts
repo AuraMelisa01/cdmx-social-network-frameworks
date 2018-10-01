@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../servicios/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -13,35 +14,38 @@ export class NavbarComponent implements OnInit {
   public photoUser: string;
 
   constructor(
-    public authService: AuthService
-  ) { }
+    public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
     this.authService.getAuth().subscribe(auth => {
       if (auth) {
         this.isLogin = true;
         this.nameUser = auth.displayName;
-        if(!auth.displayName){
-          this.nameUser = 'Usuario';
-          this.emailUser = auth.email;
+        if (!auth.displayName) {
+          this.nameUser = 'Usuarix';
+          // this.emailUser = auth.email;
         } else {
           this.nameUser = auth.displayName;
         }
-
-        if (!auth.photoURL){
+        if (!auth.photoURL) {
           this.photoUser = './assets/user.png';
-        } else  {
+        } else {
           this.photoUser = auth.photoURL;
         }
-       } else {
-          this.isLogin = false;
-        }
-
+      } else {
+        this.isLogin = false;
+      }
     })
   }
 
   onClickLogout() {
-    this.authService.logouth();
+    this.authService.logouth()
+    .then((res) => {
+      this.router.navigate(['/']);
+    }).catch((err) => {
+      console.log(err);
+    })
   }
-
 }
+
+

@@ -1,0 +1,17 @@
+<div class="container">
+    <div>
+        <div class="nav-item">
+            <p class="nav-link" *ngIf="isLogin">Bienvenidx {{nameUser}}</p>
+        </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)">
+          <div class="form-group">
+            <input type="text" class="form-control" name="message" #message="ngModel" [(ngModel)]="authService.selectedMessage.text" placeholder="¿Qué inquietud tienes el dia de hoy?">
+          </div>
+          <button type="submit" class="btn btn-warning btn-sm">PUBLICAR</button>
+        </form>
+      </div>
+    </div>
+  </div>

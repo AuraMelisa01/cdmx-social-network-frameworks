@@ -1,29 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
+//FIREBASE
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 // import { FlashMessageModule } from 'angular2-flash-message';
 // import { FlashMessageService } from 'angular2-flash-message';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-
+//CONEXION CON FIREBASE
 import { environment} from '../environments/environment';
 
+//SERVICIOS
 import { AuthService } from './servicios/auth.service';
 import { AuthGuard } from './security-guard/auth.guard';
 
+//RUTAS
+import { AppRoutingModule } from './app-routing.module';
+
+//COMPONENTES
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrerComponent } from './componentes/registrer/registrer.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
-import { AppRoutingModule } from './app-routing.module';
-import { PrivatePageComponent } from './componentes/private-page/private-page.component';
-
-import {ReactiveFormsModule} from '@angular/forms';
-
+import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { MuroComponent } from './componentes/muro/muro.component';
 
 
 @NgModule({
@@ -33,7 +38,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     RegistrerComponent,
     HomeComponent,
     NavbarComponent,
-    PrivatePageComponent,
+    PerfilComponent,
+    MuroComponent,
+
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -42,7 +49,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireDatabaseModule
     // FlashMessageModule
   ],
   providers: [AuthService, AuthGuard, /*FlashMessageService*/],

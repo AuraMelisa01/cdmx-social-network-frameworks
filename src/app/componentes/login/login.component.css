@@ -15,7 +15,7 @@ h3 {
 }
 
 .btn-facebook {
-    background: #0717a8;
+    background: #3e5c9a;
     color:#fff;
 }
 
@@ -24,7 +24,7 @@ h3 {
 }
 
 .btn-google {
-    background: rgb(199, 0, 0);
+    background: #c1392a;
     color:#fff;
 }
 
@@ -51,4 +51,8 @@ h3 {
 
 .sizeDiv {
   margin-left: 5px;
+}
+
+.textsize {
+  font-size: 12px;
 }

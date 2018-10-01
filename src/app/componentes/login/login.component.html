@@ -9,28 +9,28 @@
       <div class="card-body">
         <form (submit)="onSubmitLogin()" [formGroup]="loginForm" novalidate>
 
-          <div class="form-group">
+          <div class="form-group sizeDiv">
             <input formControlName="email" type="email" class="form-control" id="email" name="email" [(ngModel)]="email" aria-describedby="emailHelp"
               placeholder="Correo" required>
             <div *ngIf="loginForm.get('email').errors" class="alert alert-danger">
-              <div *ngIf="loginForm.get('email').errors['required']">
-                Correo requerido
+              <div class="textsize" *ngIf="loginForm.get('email').errors['required']">
+                * Campo obligatorio
               </div>
-              <div *ngIf="loginForm.get('email').errors['email']">
-                Correo inválido
+              <div class="textsize" *ngIf="loginForm.get('email').errors['email']">
+                * Correo inválido
               </div>
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group sizeDiv">
             <input formControlName="password" type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
               placeholder="Contraseña" required>
-            <div *ngIf="loginForm.get('password').errors" class="alert alert-danger sizeDiv">
-              <div *ngIf="loginForm.get('password').errors['required']">
-              Contraseña requerida
+            <div *ngIf="loginForm.get('password').errors" class="alert alert-danger">
+              <div class="textsize" *ngIf="loginForm.get('password').errors['required']">
+              * Campo obligatorio
               </div>
-              <div *ngIf="loginForm.get('password').errors['minlength']">
-              Contraseña mayor de 6 caracteres
+              <div class="textsize" *ngIf="loginForm.get('password').errors['minlength']">
+              * Contraseña mayor de 6 caracteres
               </div>
             </div>
           </div>
