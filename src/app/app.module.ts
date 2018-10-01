@@ -29,6 +29,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { MuroComponent } from './componentes/muro/muro.component';
+import { MuroAddComponent } from './componentes/muro-add/muro-add.component';
 
 
 @NgModule({
@@ -40,20 +41,22 @@ import { MuroComponent } from './componentes/muro/muro.component';
     NavbarComponent,
     PerfilComponent,
     MuroComponent,
+    MuroAddComponent,
 
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireDatabaseModule
     // FlashMessageModule
   ],
   providers: [AuthService, AuthGuard, /*FlashMessageService*/],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
