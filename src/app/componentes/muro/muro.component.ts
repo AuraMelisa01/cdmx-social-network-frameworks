@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../servicios/auth.service';
-import { MuroService } from '../../servicios/muro.service';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable } from 'rxjs/Observable';
+import { MuroservService } from '../../servicios/muroserv.service';
 
 
 
@@ -16,8 +14,12 @@ export class MuroComponent implements OnInit {
   public isLogin: boolean;
   items: any; // variable vacia que guardara los item que provienen de la bd
 
-  constructor(public authService: AuthService, private muroService: MuroService) {
-    this.muroService.messageItem().subscribe(item => {
+  editItem:any = {
+    post:""
+  }
+
+  constructor(public authService: AuthService, private muroServ: MuroservService) {
+    this.muroServ.messageItem().subscribe(item => {
       this.items = item;
     });
    }
@@ -36,4 +38,18 @@ export class MuroComponent implements OnInit {
       }
     });
   }
+
+  deletePost(item){
+    this.muroServ.deleteItem(item);
+  }
+
+
+  editPost(item) {
+    this.editItem = item;
+  }
+
+  addMessageEdit(){
+    this.muroServ.editarItem(this.editItem);
+  }
+
 }

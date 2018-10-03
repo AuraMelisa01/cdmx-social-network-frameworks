@@ -17,6 +17,7 @@ import { environment} from '../environments/environment';
 //SERVICIOS
 import { AuthService } from './servicios/auth.service';
 import { AuthGuard } from './security-guard/auth.guard';
+import { MuroservService } from './servicios/muroserv.service';
 
 //RUTAS
 import { AppRoutingModule } from './app-routing.module';
@@ -55,7 +56,7 @@ import { MuroAddComponent } from './componentes/muro-add/muro-add.component';
     ReactiveFormsModule,
     // FlashMessageModule
   ],
-  providers: [AuthService, AuthGuard, /*FlashMessageService*/],
+  providers: [AuthService, AuthGuard, MuroservService /*FlashMessageService*/],
   bootstrap: [AppComponent]
 })
 

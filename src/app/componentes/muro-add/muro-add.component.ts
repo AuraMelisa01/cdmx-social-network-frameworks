@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MuroService } from '../../servicios/muro.service';
+import { MuroservService } from '../../servicios/muroserv.service';
 
 
 @Component({
@@ -12,14 +12,16 @@ export class MuroAddComponent implements OnInit {
     post:""
   }
 
-  constructor(private muroService: MuroService) { }
+    constructor(private muroservService: MuroservService) { }
 
   ngOnInit() {
   }
 
   addMessage(){
-    this.muroService.addItem(this.item);
+    this.muroservService.addItem(this.item);
     this.item.post = "";
   }
+
+
 
 }

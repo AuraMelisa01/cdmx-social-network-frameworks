@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MuroService } from './muro.service';
+import { MuroservService } from './muroserv.service';
 
-describe('MuroService', () => {
+describe('MuroservService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: MuroService = TestBed.get(MuroService);
+    const service: MuroservService = TestBed.get(MuroservService);
     expect(service).toBeTruthy();
   });
 });

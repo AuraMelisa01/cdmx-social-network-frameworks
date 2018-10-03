@@ -3,3 +3,13 @@ p {
   font-size: 30px;
   text-align: center;
 }
+
+.icons {
+  display: inline-flex;
+  float: right;
+  padding-right: 15px;
+}
+
+.margenCard {
+  margin-top: 13px;
+}

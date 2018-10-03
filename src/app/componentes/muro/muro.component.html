@@ -6,16 +6,54 @@
   </div>
 
   <div>
-      <app-muro-add></app-muro-add>
+    <app-muro-add></app-muro-add>
   </div>
 
-
   <div>
+    <div class="card margenCard" role="alert" *ngFor="let item of items">
+      <h5 class="card-header">{{nameUser}}</h5>
       <div class="card-body">
-          <div class="alert alert-warning ml-auto" role="alert" *ngFor="let item of items">
-              {{item.post}} - {{item.id}}
-            </div>
+        {{item.post}}
+        <div class="icons" (click)="deletePost(item)">
+          <i class="fas fa-trash-alt"></i>
+        </div>
+        <div class="icons" (click)="editPost(item)" data-toggle="modal" data-target="#exampleModal">
+          <i class="fas fa-edit"></i>
+        </div>
       </div>
     </div>
+  </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="card">
+              <div class="card-body">
+                <form (ngSubmit)="addMessageEdit()">
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="post" [(ngModel)]="editItem.post">
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-warning btn-sm">EDITAR</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

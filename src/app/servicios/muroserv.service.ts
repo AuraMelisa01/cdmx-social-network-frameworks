@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
-import * as firebase from 'firebase';
 import 'rxjs/add/operator/map';
 
 export interface Item { post: string; }
@@ -10,9 +8,11 @@ export interface Item { post: string; }
 @Injectable({
   providedIn: 'root'
 })
-export class MuroService {
+export class MuroservService {
   private itemsCollection: AngularFirestoreCollection<Item>;
   items: Observable<Item[]>;
+
+  private itemDoc: AngularFirestoreDocument<Item>;
 
   constructor(private afs: AngularFirestore) {
     this.itemsCollection = afs.collection<Item>('items');
@@ -31,6 +31,16 @@ export class MuroService {
 
   addItem(item:Item){
     this.itemsCollection.add(item);
+  }
+
+  deleteItem(item){
+    this.itemDoc = this.afs.doc<Item>(`items/${item.id}`);
+    this.itemDoc.delete();
+  }
+
+  editarItem(item){
+    this.itemDoc = this.afs.doc<Item>(`items/${item.id}`);
+    this.itemDoc.update(item);
   }
 
 
