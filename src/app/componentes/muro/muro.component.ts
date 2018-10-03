@@ -50,6 +50,7 @@ export class MuroComponent implements OnInit {
 
   addMessageEdit(){
     this.muroServ.editarItem(this.editItem);
+    this.editItem.post = "";
   }
 
 }
