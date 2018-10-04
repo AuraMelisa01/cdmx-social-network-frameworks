@@ -1,5 +1,5 @@
 p {
-  color: palevioletred;
+  color: #C70039;
   font-size: 30px;
   text-align: center;
 }
@@ -8,6 +8,7 @@ p {
   display: inline-flex;
   float: right;
   padding-right: 15px;
+  color:#C70039;
 }
 
 .margenCard {

@@ -38,11 +38,11 @@ export class AuthService {
   }
 
   loginGoogle(){ /*Invocacion para poder utilizar metodo de google en la opncion de login*/
-    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider);
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
   loginFacebook(){
-    return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider);
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
   }
 
 

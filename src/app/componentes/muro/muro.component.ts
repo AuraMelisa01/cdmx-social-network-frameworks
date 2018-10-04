@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../servicios/auth.service';
 import { MuroservService } from '../../servicios/muroserv.service';
 
-
-
 @Component({
   selector: 'app-muro',
   templateUrl: './muro.component.html',

@@ -1,0 +1,17 @@
+.textEstilo {
+  font-size: 26px;
+  color: #C70039;
+  text-align: center;
+}
+
+img.rounded-circle {
+  width: 150px;
+  height: 150px;
+  display:block;
+  margin:auto;
+}
+
+.divmargen{
+  margin-top: 24px;
+}
+

@@ -1,3 +1,9 @@
-<p>
-  perfil works!
-</p>
+<div class="container divmargen" *ngIf="isLogin">
+  <div class="row">
+      <img src="{{photoUser}}" class="rounded-circle">
+  </div>
+  <div class="textEstilo">
+      <a class="nav-link textEstilo" *ngIf="isLogin">{{nameUser}}</a>
+      <span class="badge pill badge-secondary">{{emailUser}}</span>
+  </div>
+</div>
