@@ -1,27 +1,51 @@
-# RedSocial
+# RedSocial -- Beemom
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
+Beemom es una red social diseñada para promover la interacción de madres o personas que estén interesadas o inmersas en la crianza de niños, su principal objetivo es resolver las dudas que se puedan tener sobre los temas de educación, salud y alimentación. Dentro de la red social se pretende crear una comunidad de personas que genere contenidos que apoyen a las madres a resolver problemas específicos de manera sencilla y rápida. 
 
-## Development server
+## Sketch
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+![SKETCH](https://github.com/AuraMelisa01/cdmx-social-network-frameworks/blob/master/src/assets/sketch.jpg)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requerimientos de instalación
 
-## Build
+* Node js
+* Editor de texto (Visual Studio Code)
+* Windows o Mac
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Utilidades:
 
-## Running unit tests
+* La última versión de node js
+* Angular CLI
+* Firebase
+* Bootstrap
+* npm
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Comando a ejecutar en consola
 
-## Running end-to-end tests
+* npm install (Este se ejecutara hasta tener el proyecto descargado)
+* npm install -g @angular/cli (para crear un nuevo proyecto)
+* npm install --save bootstrap popper.js jquery font-awesome bootswatch
+* npm install firebase angularfire2 --save
+* npm i --save rxjs-compat
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+##  Clonar repositorio
 
-## Further help
+Copiar el link
+![Clonar](https://github.com/AuraMelisa01/cdmx-social-network-frameworks/blob/master/src/assets/clonar.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+En consola poner:
+![Consola](https://github.com/AuraMelisa01/cdmx-social-network-frameworks/blob/master/src/assets/consola.png)
+
+### Abrir en tu editor de texto 
+
+* Presionar la tecla ctrl + ñ para abrir la consola de Visual Studio Code y escribir ng serve --open para que te abra en local host el proyecto.
+
+![Editor](https://github.com/AuraMelisa01/cdmx-social-network-frameworks/blob/master/src/assets/local.png)
+
+Por ultimo el proyecto se abrira en tu navegador.
+
+![Beemom](https://github.com/AuraMelisa01/cdmx-social-network-frameworks/blob/master/src/assets/home.png)
+
+Disfruta de este proyecto.   :)
+
